@@ -8,17 +8,17 @@
 
 ### **Page de Garde**
 
-![Logo Mundiapolis](https://via.placeholder.com/150x150/003366/FFFFFF?text=MUNDIAPOLIS)
+
 
 **Établissement :** Université Mundiapolis  
 **Filière :** Cycle Ingénieur en Informatique  
+**Année :** 2e 
 **Année Universitaire :** 2025/2026
 
 **Titre du Projet :** Mise en œuvre d'une infrastructure cloud de supervision centralisée sous AWS : Déploiement de Zabbix conteneurisé pour le monitoring d'un parc hybride (Linux & Windows)
 
 **Étudiant :** Abdel-hamid Mahamat LOUKI  
-**Encadrant :** Prof. Azeddine KHIAT  
-**Date de Remise :** Janvier 2026
+**Encadrant :** Prof. Azeddine KHIAT 
 
 ---
 
