@@ -1,0 +1,11 @@
+Serveur Zabbix : 
+IP Publique : 54.90.108.60
+IP Privée : 10.0.1.249
+
+Client Linux :
+IP Publique : 52.90.155.27
+IP Privée : 10.0.1.103
+
+Client Windows :
+IP Publique : 54.236.23.160
+IP Privée : 10.0.1.248
