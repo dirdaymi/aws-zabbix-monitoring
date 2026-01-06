@@ -1,0 +1,60 @@
+# Configuration AWS - Projet Zabbix
+# Auteur : Abdel-hamid Mahamat LOUKI
+# Date : Tue Jan  6 02:08:48     2026
+
+=== CONFIGURATION RÉSEAU ===
+VPC:
+  Nom: Zabbix-VPC
+  CIDR: 10.0.0.0/16
+  Région: us-east-1
+
+Subnet:
+  Nom: Public-Subnet
+  CIDR: 10.0.1.0/24
+  AZ: us-east-1a
+  Auto-assign IP: Oui
+
+Internet Gateway:
+  Nom: Zabbix-IGW
+  État: Attached to Zabbix-VPC
+
+=== INSTANCES EC2 ===
+1. Louki-Zabbix-Server:
+   - Type: t3.large
+   - OS: Ubuntu 22.04
+   - IP Privée: 10.0.1.249
+   - Security Group: SG-Zabbix-Server
+
+2. Louki-Client-Linux:
+   - Type: t3.medium
+   - OS: Ubuntu 22.04
+   - IP Privée: 10.0.1.103
+   - Security Group: SG-Zabbix-Agents
+
+3. Louki-Client-Windows:
+   - Type: t3.large
+   - OS: Windows Server 2022
+   - IP Privée: 10.0.1.248
+   - Security Group: SG-Zabbix-Agents
+
+=== PORTS OUVERTS ===
+Serveur Zabbix (SG-Zabbix-Server):
+  - 80 (HTTP) depuis 0.0.0.0/0
+  - 443 (HTTPS) depuis 0.0.0.0/0
+  - 10051 (Zabbix) depuis SG-Zabbix-Agents
+  - 22 (SSH) depuis votre IP
+
+Agents (SG-Zabbix-Agents):
+  - 10050 (Zabbix) depuis SG-Zabbix-Server
+  - 22 (SSH) depuis SG-Zabbix-Server
+  - 3389 (RDP) depuis votre IP
+
+=== CRÉDENTIELS ===
+Zabbix Web:
+  - URL: http://<IP_PUBLIQUE_SERVEUR>
+  - Utilisateur: Admin
+  - Mot de passe: zabbix
+
+AWS:
+  - Région: us-east-1 (N. Virginia)
+  - Budget: 50$ (Learner Lab)
